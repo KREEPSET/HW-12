@@ -1,15 +1,100 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println();
+        System.out.println("Задача 1");
+        int year = 2021;
+        printYear(year);
+        System.out.println();
+        System.out.println("    Задача 2");
+        int clientOS2 = 0;
+        int clientDeviceYear = 2015;
+        printProgrammVersion(clientOS2, clientDeviceYear);
+        System.out.println();
+        System.out.println("    Задача 3");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        int deliveryDistance = 95;
+        int days = calculateDays(deliveryDistance);
+        ;
+
+        if (days == 0) {
+            System.out.println("Доставки нет");
+        } else {
+            System.out.printf("Потребуется %d дней доставки %n", days);
         }
     }
+
+    public static int calculateDays(int deliveryDistance) {
+        if (0 < deliveryDistance && deliveryDistance < 20) {
+            return 1;
+        } else if (20 <= deliveryDistance && deliveryDistance < 60) {
+            return 2;
+        } else if (60 <= deliveryDistance && deliveryDistance < 100) {
+            return 3;
+        } else {
+            return 0;
+        }
+    }
+
+    public static void printProgrammVersion(int clientOS, int clientDeviceYear) {
+        switch (clientOS) {
+            case 0:
+                if (clientDeviceYear < 2015) {
+                    System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+                } else {
+                    System.out.println("Установите версию приложения для iOS по ссылке");
+                }
+                break;
+            case 1:
+                if (clientDeviceYear < 2015) {
+                    System.out.println("Установите облегченную версию приложения для Android по ссылке");
+                } else {
+                    System.out.println("Установите версию приложения для Android по ссылке");
+                }
+        }
+    }
+
+    public static void printYear(int year) {
+        if (!(year > 1584)) {
+            System.out.println("Год должен быть больше 1584");
+            return;
+        }
+        boolean isLeapYear = checkYearForLeap(year);
+        if (isLeapYear) {
+            System.out.printf("%d год - високосный год. %n", year);
+            return;
+        }
+        System.out.printf("%d год - невисокосный год. %n", year);
+    }
+
+    public static boolean checkYearForLeap(int year) {
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+            return true;
+        }
+        return false;
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
