@@ -15,14 +15,12 @@ public class Main {
         int deliveryDistance = 95;
         int days = calculateDays(deliveryDistance);
         ;
-
         if (days == 0) {
             System.out.println("Доставки нет");
         } else {
             System.out.printf("Потребуется %d дней доставки %n", days);
         }
     }
-
     public static int calculateDays(int deliveryDistance) {
         if (0 < deliveryDistance && deliveryDistance < 20) {
             return 1;
